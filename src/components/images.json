@@ -1,68 +1,50 @@
 [
   {
     "name": "Abomasnow",
-    "silhouette": "./images/img0-s.png",
-    "revealed": "./images/img0.png",
-    "sound": "./sound/audio0.mp3"
+    "revealed": "./images/img0.png"
   },
   {
     "name": "Absol",
-    "silhouette": "./images/img01-s.png",
-    "revealed": "./images/img01.png",
-    "sound": "./sound/audio01.mp3"
+    "revealed": "./images/img01.png"
   },
   {
     "name": "Aerodactyl",
-    "silhouette": "./images/img02-s.png",
-    "revealed": "./images/img02.png",
-    "sound": "./sound/audio02.mp3"
+    "revealed": "./images/img02.png"
   },
   {
     "name": "Zygarde",
-    "silhouette": "./images/img03-s.png",
-    "revealed": "./images/img03.png",
-    "sound": "./sound/audio03.mp3"
+    "revealed": "./images/img03.png"
   },
   {
     "name": "Pikachu",
-    "silhouette": "./images/img04-s.png",
-    "revealed": "./images/img04.png",
-    "sound": "./sound/audio04.mp3"
+    "revealed": "./images/img04.png"
   },
   {
     "name": "Bulbasaur",
-    "silhouette": "./images/img05-s.png",
-    "revealed": "./images/img05.png",
-    "sound": "./sound/audio05.mp3"
+    "revealed": "./images/img05.png"
   },
   {
     "name": "Shuckle",
-    "silhouette": "./images/img06-s.png",
-    "revealed": "./images/img06.png",
-    "sound": "./sound/audio06.mp3"
+    "revealed": "./images/img06.png"
   },
   {
     "name": "Morelull",
-    "silhouette": "./images/img07-s.png",
-    "revealed": "./images/img07.png",
-    "sound": "./sound/audio07.mp3"
+    "revealed": "./images/img07.png"
   },
   {
     "name": "Shiinotic",
-    "silhouette": "./images/img08-s.png",
-    "revealed": "./images/img08.png",
-    "sound": "./sound/audio08.mp3"
+    "revealed": "./images/img08.png"
   },
   {
     "name": "Guzzlord",
-    "silhouette": "./images/img09-s.png",
-    "revealed": "./images/img09.png",
-    "sound": "./sound/audio09.mp3"
+    "revealed": "./images/img09.png"
   },
   {
     "name": "Psyduck",
-    "silhouette": "./images/img10-s.png",
-    "revealed": "./images/img10.png",
-    "sound": "./sound/audio10.mp3"
+    "revealed": "./images/img10.png"
+  },
+  {
+    "name": "PokeBall",
+    "revealed": "./images/Pokeball.png"
   }
 ]

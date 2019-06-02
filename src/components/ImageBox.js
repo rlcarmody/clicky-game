@@ -7,21 +7,18 @@ class ImageBox extends Component {
     isClicked: false
   }
 
-  componentDidUpdate() {
-    console.log(`-------------------\n${this.props.alt}: ${this.state.isClicked}`)
-  }
-
   onClickUpdate = () => {
     if (this.state.isClicked) {
       alert('Already clicked');
     } else {
       this.setState({isClicked: true});
       this.props.onClickShuffle();
+      this.props.updateScore();
     }
   }
 
   render() {
-    return <img src={this.props.src} alt={this.props.alt} onClick={this.onClickUpdate} />
+    return <div style={{display: 'inline-block', margin: '5px'}}><img src={ this.props.revealed } alt={this.props.name} onClick={this.onClickUpdate} /></div>
   };
 }
 
