@@ -5,7 +5,8 @@ import ImageContainer from './ImageContainer';
 class MainContainer extends Component {
   state = {
     currentScore: 0,
-    highScore: 0
+    highScore: 0,
+    resetSwitch: false
   };
 
   updateScore = () => {
@@ -17,11 +18,15 @@ class MainContainer extends Component {
     })
   };
 
+  resetScore = () => {
+    this.setState({currentScore: 0, resetSwitch: !this.state.resetSwitch});
+  }
+
   render() {
     return (
       <div>
-        <Navbar score={this.state.currentScore} highScore={this.state.highScore}/>
-        <ImageContainer updateScore={this.updateScore}/>
+        <Navbar score={this.state.currentScore} highScore={this.state.highScore} />
+        <ImageContainer updateScore={this.updateScore} resetScore={this.resetScore} resetSwitch={this.state.resetSwitch}/>
       </div>
     );
   };

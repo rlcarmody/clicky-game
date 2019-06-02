@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #222;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.navbar__list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar__list {
+    font-size: 1.2em;
+    padding: .5em;
+  }
+}

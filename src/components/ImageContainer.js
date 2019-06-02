@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import ImageBox from './ImageBox';
-import images from './images.json';
+// import images from './images.json';
 import shuffle from '../utils/shuffle';
 import FlipMove from 'react-flip-move';
+
+const images = [...Array(20).keys()].map(item => {
+  return {
+    revealed: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item + 1}.png`,
+    name: item
+  }
+});
 
 class ImageContainer extends Component {
   state = {
@@ -25,9 +32,10 @@ class ImageContainer extends Component {
   }
 
   render() {
+    const { resetScore, updateScore, resetSwitch } = this.props;
     return (
-      <FlipMove duration="100">
-        {images.map(pic => <ImageBox {...pic} key={pic.name} onClickShuffle={this.onClickShuffle} updateScore={this.props.updateScore} />)}
+      <FlipMove style={{ display: 'grid', gridTemplate: 'repeat(5, 1fr) / repeat(4, 1fr)', maxWidth: '100vw', justifyItems: 'center', height: '85vh', alignItems: 'center' }} duration="100">
+        {images.map(pic => <ImageBox {...pic} key={pic.name} onClickShuffle={this.onClickShuffle} updateScore={updateScore} resetScore={resetScore} resetSwitch={resetSwitch} />)}
       </FlipMove>
     );
 
