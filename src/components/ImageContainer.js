@@ -13,12 +13,23 @@ class ImageContainer extends Component {
     isLoaded: false
   }
 
-  async componentDidMount() {
-    const { pokemon, nextUrl } = await pokeGetter();
+  async getAndSetPokemonData(url) {
+    const { pokemon, nextUrl } = await pokeGetter(url);
     this.pokemon = pokemon;
     shuffle(this.pokemon);
     this.setState({ nextUrl, isLoaded: true });
   }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.resetSwitch !== newProps.resetSwitch) {
+      this.setState({isLoaded: false});
+      this.getAndSetPokemonData(this.state.nextUrl);
+    }
+  };
+
+  componentDidMount() {
+    this.getAndSetPokemonData();
+  };
 
   onClickShuffle = (timeout = 0) => {
     if (timeout > 500) {
@@ -29,7 +40,7 @@ class ImageContainer extends Component {
       this.setState({ numberOfRenders: this.state.numberOfRenders + 1 });
     }, timeout);
     this.onClickShuffle(timeout + 100);
-  }
+  };
 
   render() {
     const { resetScore, updateScore, resetSwitch } = this.props;

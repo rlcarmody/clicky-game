@@ -16,6 +16,9 @@ class MainContainer extends Component {
       currentScore: newScore,
       highScore: newScore > highScore ? newScore : highScore
     })
+    if (newScore % 200 === 0) {
+      this.setState({resetSwitch: !this.state.resetSwitch});
+    }
   };
 
   resetScore = () => {
