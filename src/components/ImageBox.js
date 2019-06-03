@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-
+import './ImageBox.css';
 
 class ImageBox extends Component {
 
   state = {
     isClicked: false,
-    resetSwitch: false
   }
 
-  componentDidUpdate() {
-    if (this.props.resetSwitch !== this.state.resetSwitch) {
-      this.setState({resetSwitch: !this.state.resetSwitch, isClicked: false});
+  componentWillReceiveProps(newProps) {
+    if (this.props.resetSwitch !== newProps.resetSwitch) {
+      this.setState({isClicked: false});
     }
   }
 
@@ -26,7 +25,7 @@ class ImageBox extends Component {
   }
 
   render() {
-    return <img style={{width: '13vh', backgroundColor: '#eee', boxShadow: '2px 2px 7px -1px rgba(0,0,0,.4)'}} src={ this.props.revealed } alt={this.props.name} onClick={this.onClickUpdate} />
+    return <img className='imageBox' src={ this.props.image } alt={this.props.name} onClick={this.onClickUpdate} />
   };
 }
 

@@ -6,7 +6,7 @@ class MainContainer extends Component {
   state = {
     currentScore: 0,
     highScore: 0,
-    resetSwitch: false
+    resetSwitch: false,
   };
 
   updateScore = () => {
@@ -23,10 +23,11 @@ class MainContainer extends Component {
   }
 
   render() {
+    const { currentScore, highScore, resetSwitch } = this.state;
     return (
       <div>
-        <Navbar score={this.state.currentScore} highScore={this.state.highScore} />
-        <ImageContainer updateScore={this.updateScore} resetScore={this.resetScore} resetSwitch={this.state.resetSwitch}/>
+        <Navbar score={currentScore} highScore={highScore} />
+        <ImageContainer updateScore={this.updateScore} resetScore={this.resetScore} resetSwitch={resetSwitch} images={this.state.images}/>
       </div>
     );
   };

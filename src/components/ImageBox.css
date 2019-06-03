@@ -1,0 +1,11 @@
+.imageBox {
+  width: 13vh;
+  background-color: #eee;
+  box-shadow: 2px 2px 7px -1px rgba(0,0,0,.4);
+  transition-duration: 100ms;
+}
+
+.imageBox:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 12px -1px rgba(0,0,0,.35);
+}
