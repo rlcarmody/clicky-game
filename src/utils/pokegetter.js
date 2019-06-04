@@ -8,10 +8,7 @@ export const pokeGetter = async (url = 'https://pokeapi.co/api/v2/pokemon/?limit
         let image = await spriteGetter(url);
         return { image, name }
       })).then(data => data);
-      return {
-        nextUrl,
-        pokemon
-      };
+      return { nextUrl, pokemon };
     });
   return responseObject;
 };

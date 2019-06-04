@@ -15,7 +15,6 @@ class ImageBox extends Component {
 
   onClickUpdate = () => {
     if (this.state.isClicked) {
-        alert('Already clicked');
         this.props.resetScore();
     } else {
       this.setState({isClicked: true});

@@ -7,6 +7,7 @@ class MainContainer extends Component {
     currentScore: 0,
     highScore: 0,
     resetSwitch: false,
+    lastGuess: false
   };
 
   updateScore = () => {
@@ -14,7 +15,8 @@ class MainContainer extends Component {
     const newScore = currentScore + 10;
     this.setState({
       currentScore: newScore,
-      highScore: newScore > highScore ? newScore : highScore
+      highScore: newScore > highScore ? newScore : highScore,
+      lastGuess: true
     })
     if (newScore % 200 === 0) {
       this.setState({resetSwitch: !this.state.resetSwitch});
@@ -22,14 +24,15 @@ class MainContainer extends Component {
   };
 
   resetScore = () => {
-    this.setState({currentScore: 0, resetSwitch: !this.state.resetSwitch});
+    this.setState({currentScore: 0, resetSwitch: !this.state.resetSwitch, lastGuess: false});
+
   }
 
   render() {
-    const { currentScore, highScore, resetSwitch } = this.state;
+    const { currentScore, highScore, resetSwitch, lastGuess } = this.state;
     return (
       <div>
-        <Navbar score={currentScore} highScore={highScore} />
+        <Navbar score={currentScore} highScore={highScore} lastGuess={lastGuess}/>
         <ImageContainer updateScore={this.updateScore} resetScore={this.resetScore} resetSwitch={resetSwitch} images={this.state.images}/>
       </div>
     );

@@ -3,7 +3,8 @@ import ImageBox from './ImageBox';
 import shuffle from '../utils/shuffle';
 import FlipMove from 'react-flip-move';
 import { pokeGetter } from '../utils/pokegetter';
-
+import Spinner from './Spinner';
+import './ImageContainer.css';
 
 class ImageContainer extends Component {
   state = {
@@ -45,10 +46,10 @@ class ImageContainer extends Component {
   render() {
     const { resetScore, updateScore, resetSwitch } = this.props;
     if (!this.state.isLoaded) {
-      return <h1>Loading...</h1>
+      return <Spinner />
     }
     return (
-      <FlipMove style={{ display: 'grid', gridTemplate: 'repeat(5, 1fr) / repeat(4, 1fr)', maxWidth: '100vw', justifyItems: 'center', height: '85vh', alignItems: 'center' }} duration="100">
+      <FlipMove className="imageContainer" duration="100">
         {this.pokemon.map(pic => <ImageBox {...pic} key={pic.name} onClickShuffle={this.onClickShuffle} updateScore={updateScore} resetScore={resetScore} resetSwitch={resetSwitch} />)}
       </FlipMove>
     );

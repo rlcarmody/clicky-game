@@ -1,0 +1,27 @@
+.notice {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.notice.notice--correct {
+  color: green;
+}
+
+.notice.notice--incorrect {
+  color: red;
+}
+
+.grow {
+  animation: grow 200ms ease-in-out;
+}
+
+@keyframes grow {
+  0%, 100% {transform: scale(1)}
+  50% {transform: scale(1.7)}
+}
+
+@media screen and (max-width: 600px) {
+  .notice {
+    font-size: 1.1em;
+  }
+}

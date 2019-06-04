@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Score from './Score';
 import './Navbar.css';
+import Notice from './Notice';
 
 class Navbar extends Component {
 
@@ -8,8 +9,11 @@ class Navbar extends Component {
     return (
       <nav className='navbar'>
         <ul className='navbar__list'>
-          <li>
+          <li id="title">
             Clicky Game
+          </li>
+          <li>
+            <Notice lastGuess={this.props.lastGuess}/>
           </li>
           <li>
             <Score score={this.props.score} highScore={this.props.highScore}/>

@@ -18,7 +18,10 @@
 
 @media screen and (max-width: 600px) {
   .navbar__list {
-    font-size: 1.2em;
-    padding: .5em;
+    font-size: 1.1em;
+    padding: .25em;
+  }
+  #title {
+    display: none;
   }
 }
