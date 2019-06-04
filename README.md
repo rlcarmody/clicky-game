@@ -2,6 +2,9 @@
 
 A React based memory game
 
+![clickygame](./clickygame.gif)
+
+
 ## Overview
 
 How strong is your memory?
